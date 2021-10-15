@@ -92,9 +92,13 @@ require("./app/routes/purchase.route")(app)
 require("./app/routes/invoice.route")(app)
 require("./app/routes/report.route")(app)
 
+// app.get("/", (req, res) => {
+//     res.json("Welcome to Gneefer-Server")
+// })
+
 app.get("/", (req, res) => {
-    res.json("Welcome to Gneefer-Server")
-})
+    res.sendFile(__dirname + "/www/index.html");
+});
 
 const PORT = process.env.PORT || 8096
 app.listen(PORT, () => {
