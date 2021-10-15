@@ -95,6 +95,11 @@ require("./app/routes/report.route")(app)
 app.get("/", (req, res) => {
     res.json("Welcome to Gneefer-Server")
 })
+
+app.get("/index", (req, res) => {
+    res.redirect('www/index.html');
+})
+
 const PORT = process.env.PORT || 8096
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
