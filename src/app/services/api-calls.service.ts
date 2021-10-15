@@ -96,15 +96,15 @@ export class ApiCallsService {
 
   //#region Items_Tab
   getItems(): Observable<any> {
-    return this.httpClient.get(this.itemEndpoint, this.httpOptions)
+    return this.httpClient.get(this.itemEndpoint)
   }
 
   createItem(item: item): Observable<any> {
-    return this.httpClient.post<item>(this.itemEndpoint, JSON.stringify(item), this.httpOptions)
+    return this.httpClient.post<item>(this.itemEndpoint, JSON.stringify(item))
   }
 
   updateItem(item: item,itemIid): Observable<any> {
-    return this.httpClient.put<item>(this.itemEndpoint + itemIid, JSON.stringify(item), this.httpOptions)
+    return this.httpClient.put<item>(this.itemEndpoint + itemIid, JSON.stringify(item))
   }
 
   deleteItem(itemIid): Observable<any> {
@@ -114,7 +114,7 @@ export class ApiCallsService {
 
   //#region Stocks_Tab
   getStocks(): Observable<any> {
-    return this.httpClient.get(this.stocksEndpoint, this.httpOptions)
+    return this.httpClient.get(this.stocksEndpoint)
   }
 
   addStocks(itemId,_branchCode,_qty): Observable<any> {
