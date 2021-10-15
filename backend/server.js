@@ -96,11 +96,6 @@ app.get("/", (req, res) => {
     res.json("Welcome to Gneefer-Server")
 })
 
-// sendFile will go here
-app.get('/index', function(req, res) {
-    res.sendFile(path.join(__dirname, '/www/index.html'));
-  });
-
 const PORT = process.env.PORT || 8096
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
