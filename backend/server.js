@@ -100,6 +100,8 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/www/index.html");
 });
 
+app.use('/',express.static(__dirname + "/www"));
+
 const PORT = process.env.PORT || 8096
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
