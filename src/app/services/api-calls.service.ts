@@ -96,7 +96,7 @@ export class ApiCallsService {
 
   //#region Items_Tab
   getItems(): Observable<any> {
-    return this.httpClient.get(this.itemEndpoint)
+    return this.httpClient.get(this.itemEndpoint, this.httpOptions)
   }
 
   createItem(item: item): Observable<any> {
@@ -114,7 +114,7 @@ export class ApiCallsService {
 
   //#region Stocks_Tab
   getStocks(): Observable<any> {
-    return this.httpClient.get(this.stocksEndpoint)
+    return this.httpClient.get(this.stocksEndpoint, this.httpOptions)
   }
 
   addStocks(itemId,_branchCode,_qty): Observable<any> {
@@ -130,7 +130,7 @@ export class ApiCallsService {
   }
 
   getBranches(): Observable<any> {
-    return this.httpClient.get(this.branchesEndpoint)
+    return this.httpClient.get(this.branchesEndpoint,this.httpOptions)
   }
   //#endregion
 
@@ -142,19 +142,19 @@ export class ApiCallsService {
 
   //#region Reports_tab
   getRevenueByBranch(startDate,endDate): Observable<any> {
-    return this.httpClient.get(this.reportsEndpoint + "revenue/branch/timerange/" + startDate + "/" + endDate)
+    return this.httpClient.get(this.reportsEndpoint + "revenue/branch/timerange/" + startDate + "/" + endDate, this.httpOptions)
   }
 
   getRevenueByBrand(startDate,endDate): Observable<any> {
-    return this.httpClient.get(this.reportsEndpoint + "revenue/brand/timerange/" + startDate + "/" + endDate)
+    return this.httpClient.get(this.reportsEndpoint + "revenue/brand/timerange/" + startDate + "/" + endDate, this.httpOptions)
   }
 
   getSalesByBrand(startDate,endDate): Observable<any> {
-    return this.httpClient.get(this.reportsEndpoint + "sales/brand/timerange/" + startDate + "/" + endDate)
+    return this.httpClient.get(this.reportsEndpoint + "sales/brand/timerange/" + startDate + "/" + endDate, this.httpOptions)
   }
 
   getAllInvoices(): Observable<any> {
-    return this.httpClient.get(this.invoiceEndpoint)
+    return this.httpClient.get(this.invoiceEndpoint, this.httpOptions)
   }
   //#endregion
 
@@ -164,7 +164,6 @@ export class ApiCallsService {
     }
     decodeURL(){
       var currentLocation  = this.router.url;
-      console.log(currentLocation)
       this.location.replaceState(currentLocation);
     }
     //end section
