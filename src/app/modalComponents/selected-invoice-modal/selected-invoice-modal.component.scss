@@ -1,0 +1,31 @@
+ion-grid {
+    ion-row {
+        ion-col {
+            &.long-text {
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+ion-grid {
+    ion-row {
+        ion-col {
+            text-align: center;
+        }
+    }
+}
+
+.perElement {
+    padding-top:10px;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.available{
+    background-color: #006403;
+  }
+.notavailable{
+    background-color: #B92C20;
+  }

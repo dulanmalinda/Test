@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="danger" slot="end" (click)="closeBTN()">
+      <ion-icon  name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+     <!--Titles-->
+     <ion-row>
+      <ion-col>
+        <ion-card style="text-align:center;"><h5>Item Name</h5></ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card style="text-align:center;"><h5>Price</h5></ion-card>
+      </ion-col>
+    </ion-row>
+    <!--End titles-->
+
+  <ion-card *ngFor="let inv of apiCalls.selectedInvoice.purchases"  [ngClass]="'available'">
+      <ion-row  >
+        <ion-col class="long-text">
+          <div class="perElement">{{inv.name}}</div>
+        </ion-col>
+        <ion-col class="long-text">
+          <div class="perElement">{{inv.discPrice}}</div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-grid>
+
+  <!-- <ion-toolbar style="bottom: 0px;position: fixed;margin-top: 40px;">
+    <ion-button expand="block" fill="outline" color="danger" (click)="returnBTN()" [disabled]="false" >Return</ion-button>
+  </ion-toolbar> -->
+
+</ion-content>

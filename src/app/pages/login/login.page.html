@@ -1,0 +1,25 @@
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
+<div class="login">
+  <h2 class="active"> sign in </h2>
+  <form>
+    <input type="text" class="text" name="username" style="background-color:#585858;color: white;" [(ngModel)]="loginCreds.username">
+     <span style="font-size: 16px;font-weight: bold;color: white;">username</span>
+
+    <br>
+    
+    <br>
+
+    <input type="password" class="text" name="password" style="background-color:#585858;color: white;" [(ngModel)]="loginCreds.password">
+    <span style="font-size: 16px;font-weight: bold;color: white;">password</span>
+    <br>
+    
+    <button class="signin" (click) = "loginBTN()">
+      Sign In
+    </button>
+
+
+    <hr>
+  </form>
+
+</div>

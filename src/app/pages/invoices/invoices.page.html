@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reports</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card (click)="getRevenueDaily(today(),tommorrow(),true)">
+    <ion-card-header>Today Revenue: {{today()}}</ion-card-header>
+  </ion-card>
+
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header> Sales By Brand </ion-card-header>
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card> 
+    <ion-card>
+      <ion-card-header> Revenue by Brand </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+    <!-- <ion-card>
+      <ion-card-header> Line Chart </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card> -->
+
+    <br>
+
+    <ion-card>
+      <ion-card-header> Recent Returns </ion-card-header>
+      <ion-card-content>
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-button expand="block" color="danger" (click)="getInvoices()">Get Invoices</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

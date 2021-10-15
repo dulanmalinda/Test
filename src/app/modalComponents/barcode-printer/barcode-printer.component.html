@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Print Barcodes</ion-title>
+    <ion-button color="danger" slot="end" (click)="closeBTN()">
+      <ion-icon  name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" (click)="printPage()">Print Page</ion-button>
+
+  <div id="PrintInvoice">
+  <table cellpadding="0" cellspacing="0" style="width: 100%;line-height: inherit;text-align: left;">
+
+    <tr *ngFor="let i of rowsBarcode">
+      <td>
+        <ngx-barcode [bc-value]="barcodeValue" [bc-display-value]="true" [bc-width] ="0.75" [bc-font-size]="10" [bc-height] = "100"></ngx-barcode>
+      </td>
+
+      <td>
+        <ngx-barcode [bc-value]="barcodeValue" [bc-display-value]="true" [bc-width] ="0.75" [bc-font-size]="10" [bc-height] = "100"></ngx-barcode>
+      </td>
+
+      <td>
+        <ngx-barcode [bc-value]="barcodeValue" [bc-display-value]="true" [bc-width] ="0.75" [bc-font-size]="10" [bc-height] = "100"></ngx-barcode>
+      </td>
+    </tr>
+    
+  </table>
+
+</div>
+</ion-content>

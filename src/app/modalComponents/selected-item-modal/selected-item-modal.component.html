@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Item</ion-title>
+    <ion-button color="danger" slot="end" (click)="closeBTN()">
+      <ion-icon  name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card style="width: 100%;padding-top: 2%; padding-bottom: 2%;">
+    <ngx-barcode [bc-value]="barcodeValue" [bc-display-value]="true"[bc-width] ="1.5" [bc-font-size]="20" [bc-height] = "100"></ngx-barcode>
+    <br>
+
+    <ion-button (click)="printBarcodeBTN()">Print Barcode</ion-button>
+  </ion-card>
+
+  <form [formGroup] = "registrationForm">
+    <ion-list lines="full" class="ion-no-margin">
+      <ion-item>
+        <ion-label position="fixed">Name</ion-label>
+        <ion-input formControlName="name" placeholder="{{apiCalls.selectedItem.name}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Catagory</ion-label>
+        <ion-input formControlName="catName"  placeholder="{{apiCalls.selectedItem.catName}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Brand</ion-label>
+        <ion-input formControlName="brandName" placeholder="{{apiCalls.selectedItem.brandName}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Tags</ion-label>
+        <ion-input formControlName="tag" placeholder="{{apiCalls.selectedItem.tag}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Cost</ion-label>
+        <ion-input formControlName="cost" type="number" placeholder="{{apiCalls.selectedItem.cost}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Price</ion-label>
+        <ion-input formControlName="price" type="number" placeholder="{{apiCalls.selectedItem.price}}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed">Discount</ion-label>
+        <ion-input formControlName="discount" type="number" placeholder="{{apiCalls.selectedItem.disValue}}"></ion-input>
+      </ion-item>
+    </ion-list>
+  <br>
+  <ion-toolbar>
+    <ion-button expand="block" fill="outline" (click)="updateBTN()"  [disabled]="false">Update Item </ion-button>
+  </ion-toolbar>
+</form>
+
+  <br>
+  <br>
+
+  <ion-toolbar>
+    <ion-button expand="block" fill="outline" color="danger" (click)="deleteBTN()" [disabled]="false">Delete Item </ion-button>
+  </ion-toolbar>
+</ion-content>

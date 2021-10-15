@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>All Invoices</ion-title>
+    <ion-button color="danger" slot="end" (click)="closeBTN()">
+      <ion-icon  name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of returnedInvoices"  [ngClass]="'available'" (click)="selectInvoice(item)" style="color: white;">
+    <ion-card-content>{{item.invId}}</ion-card-content>
+  </ion-card>
+</ion-content>

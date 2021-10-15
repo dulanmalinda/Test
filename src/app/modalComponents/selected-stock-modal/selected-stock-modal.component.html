@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{apiCalls.selectedStock.name}}</ion-title>
+    <ion-button color="danger" slot="end" (click)="closeBTN()">
+      <ion-icon  name="close"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Add stocks</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup] = "addStocksForm">
+        <ion-list lines="full" class="ion-no-margin">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input formControlName="Amount" type="number" min = "0"></ion-input>
+          </ion-item>
+        </ion-list>
+      <br>
+      <ion-toolbar>
+        <ion-button expand="block" fill="outline" (click)="addBTN()"  [disabled]="!addStocksForm.valid">Add Stocks</ion-button>
+      </ion-toolbar>
+    </form>
+    </ion-card-content>
+  </ion-card>
+
+  <br>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Transfer stocks</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup] = "transferStocksForm">
+        <ion-list lines="full" class="ion-no-margin">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input formControlName="Amount" type="number" min = "0"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Transfer To</ion-label>
+            <ion-select placeholder="Select One" formControlName="Branch">
+              <ion-select-option value="{{branch.branchCode}}" *ngFor="let branch of availabeBraches">{{branch.branchName}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      <br>
+      <ion-toolbar>
+        <ion-button expand="block" fill="outline" (click)="transferBTN()"  [disabled]="!transferStocksForm.valid">Transfer Stocks</ion-button>
+      </ion-toolbar>
+    </form>
+    </ion-card-content>
+  </ion-card>
+
+  <br>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Delete stocks</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup] = "deleteStocksForm">
+        <ion-list lines="full" class="ion-no-margin">
+          <ion-item>
+            <ion-label position="floating">Amount</ion-label>
+            <ion-input formControlName="Amount" type="number" min = "0"></ion-input>
+          </ion-item>
+        </ion-list>
+      <br>
+      <ion-toolbar>
+        <ion-button expand="block" fill="outline" (click)="deleteAlert()"  [disabled]="!deleteStocksForm.valid">Delete Stocks</ion-button>
+      </ion-toolbar>
+    </form>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
