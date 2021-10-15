@@ -28,12 +28,12 @@ export class user{
 })
 export class ApiCallsService {
 
-  itemEndpoint = 'https://test-backend-neon.vercel.app/api/item/';
-  stocksEndpoint = 'https://test-backend-neon.vercel.app/api/stock/';
-  branchesEndpoint = 'https://test-backend-neon.vercel.app/api/branch/';
-  loginEndpoint = 'https://test-backend-neon.vercel.app/api/auth/signin';
-  reportsEndpoint = 'https://test-backend-neon.vercel.app/api/report/';
-  invoiceEndpoint = 'https://test-backend-neon.vercel.app/api/invoice/';
+  itemEndpoint = 'https://cors-anywhere.herokuapp.com/https://test-backend-neon.vercel.app/api/item/';
+  stocksEndpoint = 'https://cors-anywhere.herokuapp.com/https://test-backend-neon.vercel.app/api/stock/';
+  branchesEndpoint = 'https://cors-anywhere.herokuapp.com/https://test-backend-neon.vercel.app/api/branch/';
+  loginEndpoint = 'https://cors-anywhere.herokuapp.com/https://test-backend-neon.vercel.app/api/auth/signin';
+  reportsEndpoint = 'https://cors-anywhere.herokuapp.com/https://test-backend-neon.vercel.app/api/report/';
+  invoiceEndpoint = 'https://cors-anywhere.herokuapp.com/https://test-backend-neon.vercel.app/api/invoice/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
