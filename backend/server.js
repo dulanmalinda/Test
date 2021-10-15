@@ -1,9 +1,9 @@
 const express = require("express")
-const cors = require("cors")
+//const cors = require("cors")
 const mongooseMorgan = require("mongoose-morgan")
 const db = require("./app/models")
 const app = express()
-app.use(cors())
+//app.use(cors())
 app.use(express.json())
 
 
@@ -11,27 +11,14 @@ app.use(mongooseMorgan({
     connectionString: db.url,
 }))
 
-const allowedOrigins = [
-    'capacitor://localhost',
-    'ionic://localhost',
-    'http://localhost',
-    'http://localhost:8080',
-    'http://localhost:8100',
-  ];
-  
-  // Reflect the origin if it's in the allowed list or not defined (cURL, Postman, etc.)
-  const corsOptions = {
-    origin: (origin, callback) => {
-      if (allowedOrigins.includes(origin) || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Origin not allowed by CORS'));
-      }
+app.use((req,res,next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "*");
+    if(req.method === "OPTIONS"){
+        res.header('Access-Control-Allow-Methods','PUT,POST,PATCH,DELETE,GET');
+        return res.status(200).json({})
     }
-  }
-  
-  // Enable preflight requests for all routes
-  app.options('*', cors(corsOptions));
+});
 
 const Role = require("./app/models/role.model")
 
