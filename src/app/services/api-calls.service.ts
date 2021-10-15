@@ -28,7 +28,7 @@ export class user{
 })
 export class ApiCallsService {
 
-  itemEndpoint = 'https://test-backend-neon.vercel.app/api/item/';
+  itemEndpoint = 'https://test-dulanmalinda.vercel.app/api/item/';
   stocksEndpoint = 'https://test-backend-neon.vercel.app/api/stock/';
   branchesEndpoint = 'https://test-backend-neon.vercel.app/api/branch/';
   loginEndpoint = 'https://test-backend-neon.vercel.app/api/auth/signin';
