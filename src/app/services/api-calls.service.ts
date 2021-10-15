@@ -32,7 +32,7 @@ export class ApiCallsService {
   stocksEndpoint = 'https://test-backend-neon.vercel.app/api/stock/';
   branchesEndpoint = 'https://test-backend-neon.vercel.app/api/branch/';
   loginEndpoint = 'https://test-backend-neon.vercel.app/api/auth/signin';
-  reportsEndpoint = 'https://test-backend-neon.vercel.app/report/';
+  reportsEndpoint = 'https://test-backend-neon.vercel.app/api/report/';
   invoiceEndpoint = 'https://test-backend-neon.vercel.app/api/invoice/';
 
   httpOptions = {
