@@ -28,12 +28,12 @@ export class user{
 })
 export class ApiCallsService {
 
-  itemEndpoint = 'https://gneefer-server-three.vercel.app/api/item/';
-  stocksEndpoint = 'https://gneefer-server-three.vercel.app/api/stock/';
-  branchesEndpoint = 'https://gneefer-server-three.vercel.app/api/branch/';
-  loginEndpoint = 'https://gneefer-server-three.vercel.app/api/auth/signin';
-  reportsEndpoint = 'https://gneefer-server-three.vercel.app/report/';
-  invoiceEndpoint = 'https://gneefer-server-three.vercel.app/api/invoice/';
+  itemEndpoint = 'https://test-backend-neon.vercel.app/api/item/';
+  stocksEndpoint = 'https://test-backend-neon.vercel.app/api/stock/';
+  branchesEndpoint = 'https://test-backend-neon.vercel.app/api/branch/';
+  loginEndpoint = 'https://test-backend-neon.vercel.app/api/auth/signin';
+  reportsEndpoint = 'https://test-backend-neon.vercel.app/report/';
+  invoiceEndpoint = 'https://test-backend-neon.vercel.app/api/invoice/';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
